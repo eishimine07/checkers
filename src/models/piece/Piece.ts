@@ -2,6 +2,8 @@ import type { Board } from '@/models/Board'
 import type { Position } from '@/models/Position'
 import type Player from '@/models/Player'
 import generateUID from '@/helpers/generateUID'
+import type { Direction } from '@/models/Direction'
+import getValidMoves from '@/helpers/getValidMoves'
 
 export default abstract class Piece {
   public readonly id = generateUID()
@@ -20,5 +22,9 @@ export default abstract class Piece {
     return this.position.row
   }
 
-  abstract previewMoveOptions(board: Board): Position[]
+  abstract getDirections(): Direction[]
+
+  previewMoveOptions(board: Board): Position[] {
+    return getValidMoves(board, this.position, this.player, this.getDirections())
+  }
 }

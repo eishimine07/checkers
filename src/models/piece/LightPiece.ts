@@ -10,12 +10,10 @@ export default class LightPiece extends Piece {
     super(Player.LIGHT, initPosition, false)
   }
 
-  previewMoveOptions(board: Board): Position[] {
-    const directions: Direction[] = [
+  getDirections(): Direction[] {
+    return [
       [1, -1],
       [-1, -1]
     ]
-
-    return getValidMoves(board, this.position, this.player, directions)
   }
 }
