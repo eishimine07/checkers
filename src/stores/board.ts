@@ -19,7 +19,6 @@ export const useBoardStore = defineStore('board', () => {
 
   function reset(): void {
     state.value = getInitialGameState()
-    console.log(JSON.stringify(getInitialGameState()))
     currentPlayer.value = Player.DARK
     selectedPiece.value = null
     scoreStore.reset()
@@ -72,7 +71,7 @@ export const useBoardStore = defineStore('board', () => {
 
   function turnEnd(): void {
     selectedPiece.value = null
-    console.log(scoreStore.winner)
+
     if (scoreStore.winner) return
 
     currentPlayer.value = currentPlayer.value === Player.DARK ? Player.LIGHT : Player.DARK
