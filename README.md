@@ -1,6 +1,6 @@
 # Checkers
 
-This template should help get you started developing with Vue 3 in Vite.
+![Captura de tela 2024-09-20 190140](https://github.com/user-attachments/assets/2ead674a-0161-47d0-8ae8-d70cb341a58e)
 
 ## Recommended IDE Setup
 
