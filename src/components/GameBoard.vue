@@ -22,7 +22,7 @@ onBeforeMount(() => {
           @click.prevent="boardStore.handlePieceClick(element)" />
 
         <EmptySquare v-else :key="`${row}-${col}`"
-          :highlight="!!boardStore.previewMovementOptions.find((preview) => preview.col === col && preview.row === row)"
+          :highlight="!!boardStore.validMovementOptions.find((move) => move.position.col === col && move.position.row === row)"
           @click.prevent="boardStore.handleEmptySquareClick({ col, row })" />
       </template>
     </template>

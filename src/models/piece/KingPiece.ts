@@ -3,7 +3,8 @@ import type { Position } from '@/models/Position'
 import Piece from '@/models/piece/Piece'
 import Player from '@/models/Player'
 import type { Direction } from '@/models/Direction'
-import getValidMovesForKing from '@/helpers/getValidMovesForKing'
+import getValidMovementsForKing from '@/services/game/getValidMovementsForKing'
+import type { ValidMovementOption } from '@/models/ValidMovementOption'
 
 export default class KingPiece extends Piece {
   constructor(player: Player, initPosition: Position) {
@@ -19,7 +20,7 @@ export default class KingPiece extends Piece {
     ]
   }
 
-  previewMoveOptions(board: Board): Position[] {
-    return getValidMovesForKing(board, this.position, this.player, this.getDirections())
+  validMovementOptions(board: Board): ValidMovementOption[] {
+    return getValidMovementsForKing(board, this.position, this.player, this.getDirections())
   }
 }

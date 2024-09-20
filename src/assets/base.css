@@ -20,11 +20,8 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
-  --board-size-1: 480px;
-  --board-size-2: 320px;
-
-  --square-size-1: 60px;
-  --square-size-2: 40px;
+  --board-size-1: 400px;
+  --board-size-2: 480px;
 
   --c-piece-dark-1: #3b82f6;
   --c-piece-dark-2: #1e3a8a;

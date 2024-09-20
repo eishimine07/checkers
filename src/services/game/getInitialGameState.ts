@@ -1,8 +1,6 @@
 import { BOARD_SIZE, type Board } from '@/models/Board'
 import DarkPiece from '@/models/piece/DarkPiece'
-import KingPiece from '@/models/piece/KingPiece'
 import LightPiece from '@/models/piece/LightPiece'
-import Player from '@/models/Player'
 
 export default function getInitialGameState(): Board {
   const board: Board = new Array(BOARD_SIZE)

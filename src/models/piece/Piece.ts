@@ -3,7 +3,8 @@ import type { Position } from '@/models/Position'
 import type Player from '@/models/Player'
 import generateUID from '@/helpers/generateUID'
 import type { Direction } from '@/models/Direction'
-import getValidMoves from '@/helpers/getValidMoves'
+import getValidMoves from '@/services/game/getValidMovements'
+import type { ValidMovementOption } from '@/models/ValidMovementOption'
 
 export default abstract class Piece {
   public readonly id = generateUID()
@@ -24,7 +25,7 @@ export default abstract class Piece {
 
   abstract getDirections(): Direction[]
 
-  previewMoveOptions(board: Board): Position[] {
+  validMovementOptions(board: Board): ValidMovementOption[] {
     return getValidMoves(board, this.position, this.player, this.getDirections())
   }
 }

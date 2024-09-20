@@ -19,7 +19,7 @@ const type = computed(() => props.player === Player.DARK ? 'dark' : 'light')
 <template>
   <div :class="['wrapper', selected && 'selected']">
     <div :class="['game-piece', type]">
-      <IconCrown v-if="props.king" />
+      <IconCrown class="game-piece__icon" v-if="props.king" />
     </div>
   </div>
 </template>
@@ -37,8 +37,11 @@ const type = computed(() => props.player === Player.DARK ? 'dark' : 'light')
 }
 
 .game-piece {
+  align-items: center;
   border-radius: 9999px;
+  display: flex;
   height: 100%;
+  justify-content: center;
   padding: 6px;
   width: 100%;
 
@@ -50,6 +53,18 @@ const type = computed(() => props.player === Player.DARK ? 'dark' : 'light')
   &.light {
     background-color: var(--c-piece-light-1);
     box-shadow: 3px 4px var(--c-piece-light-2);
+  }
+}
+
+.game-piece__icon {
+  height: 24px;
+  width: 24px;
+}
+
+@media (max-width: 600px) {
+  .game-piece__icon {
+    height: 16px;
+    width: 16px;
   }
 }
 </style>
