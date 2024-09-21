@@ -41,7 +41,6 @@ describe('getValidMovementsForKing', () => {
     const darkPiece = new DarkPiece({ row: 4, col: 5 })
     board[darkKingPiece.position.row][darkKingPiece.position.col] = darkKingPiece
     board[darkPiece.position.row][darkPiece.position.col] = darkPiece
-    console.log(board)
 
     const movements = getValidMovementsForKing(
       board,

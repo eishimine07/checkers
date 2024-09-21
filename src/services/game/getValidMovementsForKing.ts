@@ -1,9 +1,9 @@
-import { BOARD_SIZE, type Board } from '@/models/Board'
+import { type Board } from '@/models/Board'
 import type { Direction } from '@/models/Direction'
 import type Player from '@/models/Player'
 import type { Position } from '@/models/Position'
 import type { ValidMovementOption } from '@/models/ValidMovementOption'
-import isValidPosition from './isValidPosition'
+import isValidPosition from '@/services/game/isValidPosition'
 
 function getPerpendicularDirections([dx, dy]: Direction): Direction[] {
   return Math.abs(dx + dy) === 2
@@ -54,15 +54,10 @@ export default function getValidMovementsForKing(
           }
         }
       } else if (board[newRow] !== undefined && board[newRow][newCol]?.player !== player) {
-        // Encontra uma peça adversária, verifica se pode saltar
         const jumpRow = newRow + dy
         const jumpCol = newCol + dx
 
-        if (
-          board[jumpRow] !== undefined &&
-          board[jumpRow][jumpCol] === null
-          // !visited.some((pos) => pos.row === jumpRow && pos.col === jumpCol)
-        ) {
+        if (board[jumpRow] !== undefined && board[jumpRow][jumpCol] === null) {
           jumped = true
           newCaptured.push({ row: newRow, col: newCol })
         } else {
@@ -72,7 +67,6 @@ export default function getValidMovementsForKing(
         break
       }
 
-      // Continua avançando na diagonal
       newRow += dy
       newCol += dx
     }

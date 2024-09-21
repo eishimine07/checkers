@@ -19,15 +19,12 @@ export default function getValidMovements(
     const newRow = row + dy
     const newCol = col + dx
 
-    // Verifica se a casa vizinha está livre
     if (captured.length === 0 && board[newRow][newCol] === null) {
       result.push({
         captured: captured,
         position: { row: newRow, col: newCol }
       })
-    }
-    // Verifica se é possível saltar sobre uma peça
-    else if (
+    } else if (
       board[newRow] !== undefined &&
       board[newRow][newCol] instanceof Piece &&
       board[newRow][newCol].player !== player &&
@@ -42,10 +39,7 @@ export default function getValidMovements(
         position: newPosition
       })
 
-      // Continuar verificando apenas se ainda não houver saltado
-      const additionalMoves = getValidMovements(board, newPosition, player, directions, newJumped)
-
-      result.push(...additionalMoves)
+      result.push(...getValidMovements(board, newPosition, player, directions, newJumped))
     }
   }
 

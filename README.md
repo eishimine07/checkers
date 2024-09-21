@@ -2,44 +2,43 @@
 
 ![Captura de tela 2024-09-20 190140](https://github.com/user-attachments/assets/2ead674a-0161-47d0-8ae8-d70cb341a58e)
 
-## Recommended IDE Setup
+## Índice
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- [Descrição](#descrição)
+- [Tech Stack](#tech-stack)
+- [Rodando o projeto](#rodando-o-projeto)
+- [Rodando os testes](#rodando-os-testes)
 
-## Type Support for `.vue` Imports in TS
+## Descrição
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Este projeto é uma implementação do jogo de damas, desenvolvido utilizando Vue.js com TypeScript. O jogo segue as regras tradicionais em um tabuleiro 8x8, incluindo movimentos de peças simples e peças "Damas"
 
-## Customize configuration
+## Tech Stack
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Vue 3
+- Vite
+- Pinia
+- Typescript
+- Vitest
 
-## Project Setup
+## Rodando o projeto
 
-```sh
+Instalando as dependências
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Iniciando o server
 
-```sh
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## Rodando os testes
 
-```sh
-npm run build
-```
+Rodando os testes unitários
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
+```bash
 npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
